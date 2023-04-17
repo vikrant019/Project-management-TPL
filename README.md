@@ -11,10 +11,9 @@ after change: return item.ptheme.includes(searchText)
 .
 here is the function in case-sensitive.pipe.ts
 
-transform(items: any[], searchText: string='') {
-
-    if (!items) return [];
-    if (!searchText || searchText === '') return items;
-    return items.filter(item => {
-        return item.ptheme.includes(searchText) ;
-    });
+    transform(items: any[], searchText: string=''){
+        if (!items) return [];
+        if (!searchText || searchText === '') return items;
+        return items.filter(item => {
+            return item.ptheme.includes(searchText) ;
+     });
