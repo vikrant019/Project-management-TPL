@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="loginbox mb-5">
+    <div>
+      <div class="oval">
+      </div>
+      <div>
+        <div class="text-center pt-5" style="z-index: 1">
+          <img src="assets/images/loginLogo.svg" alt="" class="logo" />
+          <p class="pp">Online Project Management</p>
+        </div>
+      </div>
+    </div>
+    <div class="adj">
+      <div class="d-md-flex justify-content-center w" style="z-index: 1">
+        <form [formGroup]="loginForm" (submit)="login()">
+          <div class="loginfield mt-4 p-5">
+            <p class="font-weight-bold text-center my-4" style="word-spacing: 4px; font-size: 20px">
+              Login to get started
+            </p>
+            <div class="form-group">
+              <label for="" class="text-secondary" [ngClass]="{'red' : loginForm.controls.uemail.invalid}">Email</label>
+              <input type="text" formControlName="uemail" class="form-control px-2 py-4" />
+              <span *ngIf="loginForm.controls.uemail.invalid" class="text-danger" style="font-size:14px">email is
+                required</span>
+            </div>
+            <div class="mt-4 form-group">
+              <label for="" class="text-secondary">Password</label>
+              <input [type]="pass" formControlName="upass" class="form-control px-2 py-4" />
+              <i [class]="'fa-sharp fa-solid  phide '+class" (click)="hpass()"></i>
+              <span *ngIf="loginForm.controls.upass.invalid" class="text-danger " style="font-size:14px;">password is
+                required</span>
+
+            </div>
+            <div class="text-center mt-4">
+              <button class="btn btn-primary px-5 py-2 loginbtn">Login</button>
+              <p class="text-danger m-3" style="font-size:15px">{{err}}</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div class="rectangle-1 md-p-4 md-mb-5">
+    <div class="container mb-0">
+
+      <div class="row mt-1 mb-2">
+
+        <div class="col-8 col-md-6">
+          <div class=" inputs">
+            <i>
+              <img src="assets/images/search.svg" alt="" width="70%">
+            </i>
+            <input type="text" class="form-control " placeholder=" Search" name="search" [(ngModel)]="searchText"
+              autocomplete="off">
+
+          </div>
+        </div>
+        <div class="col-md-4 mt-1 ">
+          <div class="dropdown d-flex align-items-center ml-md-5 ">
+
+          <span class="">SortBy:</span>
+          <select [(ngModel)]="selectedColumn" (change)="sortTableData()" class="form-control border-0 w-50">
+            <option value="ptheme" >Project Name</option>
+            <option value="sDate">Start Date</option>
+            <option value="eDate">End Date</option>
+            <option value="pReason" >Reason</option>
+            <option value="pType">Type</option>
+            <option value="pDivision">Division</option>
+            <option value="pCategory">Category</option>
+            <option value="pPriority" >Priority</option>
+            <option value="pDept">Department</option>
+            <option value="pLocation">Location</option>
+            <option value="pStatus">Status</option>
+          </select>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <table class="table w-100 ">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Project Name</th>
+          <th scope="col">Reason </th>
+          <th scope="col">Type</th>
+          <th scope="col" class="hide">Division</th>
+          <th scope="col" class="hide">Category</th>
+          <th scope="col" class="hide">Priority</th>
+          <th scope="col">Dept.</th>
+          <th scope="col">Location</th>
+          <th scope="col" class="">Status</th>
+          <th scope="col" class=""></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of data | caseSensitive: searchText | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };" >
+          <td>
+            <b class=" font-weight-bold  mt-0" data-title="" scope="row" style="font-size:15px">{{data.ptheme}}</b>
+            <p class=" mb-0" style="font-size: 12px;">{{data.sDate | date:'mediumDate'}} to {{data.eDate | date:'mediumDate'}}</p>
+          </td>
+          <td data-title="Reason: "> {{data.pReason}}</td>
+          <td data-title="Type: ">{{data.pType}}</td>
+          <td data-title="Div: " class="hide">{{data.pDivision}}</td>
+
+          <td data-title="Category: " class="hide">{{data.pCategory}}</td>
+          <td data-title="Priority " class="hide">{{data.pPriority}}</td>
+          <td data-title="Dept: ">{{data.pDept}}</td>
+          <td data-title="Location: ">{{data.pLocation}}</td>
+          <td data-title="" class="status font-weight-bold" style="font-size: 14px;"> {{data.pStatus}}</td>
+          <td class="">
+            <button class="btn btn-primary btn-sm mr-2 mb-1" (click)="changeStatus(data.pid,'Running')">Start</button>
+            <button class="btn btn-primary-outline border-primary text-primary btn-sm ml-2 mt-0"
+              (click)="changeStatus(data.pid,'Closed')">Close</button>
+            <button class="btn btn-primary-outline border-primary text-primary btn-sm ml-2 mt-0"
+              (click)="changeStatus(data.pid,'Cancelled')">Cancel</button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center" style="margin-top: -10px;margin-bottom: -5px;">
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="https://kit.fontawesome.com/66b1b308f6.js" crossorigin="anonymous"></script>

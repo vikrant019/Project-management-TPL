@@ -1,0 +1,21 @@
+.rectangle-1 {
+  position: absolute;
+  width:90%;
+  border-radius: 20px ;
+  background-color: #ffffff;
+  box-shadow: 0 7px 18px 0 rgba(2,118,179,0.13);
+  margin-left: 2% ;
+  margin-top:80px;
+  padding: 20px;
+
+}
+@media only screen and (max-width: 700px){
+.cbtn{
+  position: relative;
+}
+.rectangle-1 {
+  width:95%;
+  margin-bottom: 200px;
+  margin-right: 1% ;
+}
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+
+</head>
+
+<body>
+
+
+  <!-- Main -->
+
+  <div class="main-cards" >
+
+    <div class="card">
+      <div class="card-inner">
+        <p class="">Total Project</p>
+      </div>
+      <span class="">{{count.totalCount}}</span>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <p class="">Closed</p>
+      </div>
+      <span class=" font-weight-bold">{{count.ClosedCount}}</span>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <p class="">Running</p>
+      </div>
+      <span class=" font-weight-bold">{{count.RunningCount}}</span>
+    </div>
+
+    <div class="card dbock">
+      <div class="card-inner">
+        <p class="">Closure Delay</p>
+      </div>
+      <span class=" font-weight-bold">{{count.ClosureCount}}</span>
+    </div>
+    <div class="card dbock">
+      <div class="card-inner">
+        <p class="">Cancelled</p>
+      </div>
+      <span class=" font-weight-bold">{{count.CancelledCount}}</span>
+    </div>
+
+  </div>
+  <!-- End Main -->
+  <div class="" style="background-color: #f0f3f6;">
+    <h5 class="m-4">Department wise- Total vs Closed</h5>
+    <div style class="chartc">
+      <div style="display: block; " class="shadow ">
+        <canvas height={{barHeight}} width="100"
+         baseChart [type]="barChartType" [datasets]="barChartData" [labels]="barChartLabels"
+          [options]="barChartOptions" [legend]="barChartLegend">
+        </canvas>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

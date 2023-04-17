@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body >
+
+    <div class="d-flex">
+     <div class="icons">
+        <img routerLink="/in/dashboard" src="assets/images/Dashboard.svg" alt="">
+        <img routerLink="/in/project-list" src="assets/images/Project-list.svg" alt="">
+        <div class="path-5"></div>
+        <img [routerLink]="'/in/add-project'" src="assets/images/create-project.svg" alt="">
+        <div class="logout mt-5">
+          <img [routerLink]="'/in/logout'" src="assets/images/Logout.svg" alt="">
+        </div>
+      </div>
+
+    </div>
+
+</body>
+</html>

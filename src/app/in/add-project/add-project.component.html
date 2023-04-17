@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form [formGroup]="addProject" (submit)="saveProject()">
+  <div class="rectangle-1 p-4 md-mb-5">
+    <div class="row mt-4">
+      <div class="col-md-8">
+        <!-- <input type="text" id="" class="form-control p-2"> -->
+        <textarea name="" placeholder="Enter project theme" class="form-control" formControlName="ptheme"></textarea>
+
+        <span *ngIf="addProject.controls.ptheme.invalid" class="text-danger" style="font-size:14px">Project theme required</span>
+
+      </div>
+      <div class="col-md-4 mt-4 text-center d-none d-md-inline">
+        <button class="btn btn-primary cbtn" type="submit" >save project</button>
+      </div>
+      <div class="col-md-4 mt-4 mt-md-5">
+        <label class="mb-0 text-secondary">Reason</label>
+        <select name="" class="form-control " formControlName="pReason">
+          <option value="For Business" selected>For Business</option>
+          <option value="For personal">For personal</option>
+        </select>
+      </div>
+      <div class="col-md-4 mt-4 mt-md-5">
+        <label class="mb-0 text-secondary">Type</label>
+        <select name="" class="form-control " formControlName="pType">
+          <option value="External">External</option>
+          <option value="Internal">Internal</option>
+        </select>
+      </div>
+      <div class="col-md-4 mt-4 mt-md-5">
+        <label class="mb-0 text-secondary" >Division</label>
+        <select name="" class="form-control " formControlName="pDivision">
+          <option value="Filters">Filters</option>
+          <option value="Filters2">Filters2</option>
+        </select>
+      </div>
+      <div class="col-md-4 mt-4">
+        <label class="mb-0 text-secondary">Category</label>
+        <select name="" class="form-control " formControlName="pCategory">
+          <option value="Quality A">Quality A</option>
+          <option value="Quality B">Quality B</option>
+        </select>
+      </div>
+      <div class="col-md-4 mt-4">
+        <label class="mb-0 text-secondary">Priority</label>
+        <select name="" class="form-control " formControlName="pPriority">
+          <option value="High">High</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+      <div class="col-md-4 mt-4">
+        <label class="mb-0 text-secondary">Department</label>
+        <select name="" class="form-control " formControlName="pDept">
+          <option value="Strategy">Strategy</option>
+          <option value="Financial">Financial</option>
+          <option value="Quality">Quality</option>
+          <option value="MAN">MAN</option>
+          <option value="STO">STO</option>
+          <option value="HR">HR</option>
+
+
+
+
+        </select>
+      </div>
+        <div class="col-md-4 mt-4">
+          <label class="mb-0 text-secondary">Start date as per project plan</label>
+          <input type="date" class="form-control" id="" formControlName="sDate">
+        <span *ngIf="addProject.controls.sDate.invalid" class="text-danger" style="font-size:14px">Date required!</span>
+
+        </div>
+        <div class="col-md-4 mt-4">
+          <label class="mb-0 text-secondary">End date as per project plan</label>
+          <input type="date" class="form-control" id="" formControlName="eDate">
+        <span *ngIf="addProject.controls.eDate.invalid" class="text-danger" style="font-size:14px">Date required</span>
+
+
+        </div>
+        <div class="col-md-4 mt-4">
+          <label class="mb-0 text-secondary">Location</label>
+          <select name="" class="form-control " formControlName="pLocation">
+            <option value="Pune">Pune</option>
+            <option value="Ahmednagar">Ahmednagar</option>
+          </select>
+
+        </div>
+        <div class="col-md-12 mt-4 text-right">
+          <label class="mb-0 text-secondary">Status: </label>
+          <span class="font-weight-bold"> Registered</span>
+          <input type="hidden" class="form-control" id="" formControlName="pStatus">
+
+        </div>
+        <div class="col-md-12 mt-4 mb-5 text-center d-md-none">
+          <button class="btn btn-primary w-100 mb-3"  type="submit" style="border-radius:15px">save project</button>
+        </div>
+      </div>
+
+  </div>
+</form>
+</body>
+
+</html>
